@@ -68,6 +68,8 @@ module.exports = function(context, cb) {
         .then(([currentTimer, trackedTime]) => {
           let currentEntry = currentTimer.data.data;
 
+          console.log(moment.tz.guess());
+
           let _return = {
             lastModified: moment().format('DD/MM/YYYY HH:mm:ss'),
             timeEntries: trackedTime.data.data.map(entry => {
