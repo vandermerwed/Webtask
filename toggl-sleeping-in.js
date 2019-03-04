@@ -21,7 +21,7 @@ module.exports = function(context, cb) {
           cb(null, { msg: 'error' });
         }
       );
-      cb(null, { msg: 'success' });
+      cb(null, { msg: 'Sleeping In timer started' });
     } else {
       cb(null, { msg: 'Sleep timer is not running' });
     }
