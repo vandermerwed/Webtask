@@ -69,7 +69,7 @@ module.exports = function(context, cb) {
           let currentEntry = currentTimer.data.data;
 
           let _return = {
-            lastModified: moment.utc().format('DD/MM/YYYY HH:mm:ss Z'),
+            lastModified: moment.utc().format('DD/MM/YYYY HH:mm:ss'),
             timeEntries: trackedTime.data.data.map(entry => {
               return {
                 id: entry.id,
