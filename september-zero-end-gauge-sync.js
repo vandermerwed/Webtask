@@ -76,10 +76,10 @@ module.exports = function(context, cb) {
             timeEntries: trackedTime.data.data.map(entry => {
               return {
                 id: entry.id,
-                client: entry.client,
-                description: entry.description,
-                project: entry.project,
-                projectColor: entry.project_hex_color,
+                client: entry.client || '',
+                description: entry.description || '',
+                project: entry.project || '',
+                projectColor: entry.project_hex_color || '',
                 start: entry.start,
                 end: entry.end,
                 duration: entry.dur,
