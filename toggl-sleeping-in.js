@@ -14,6 +14,7 @@ module.exports = function(context, cb) {
           description: 'Sleeping in',
           pid: context.secrets.PROJECT_ID,
           billable: false,
+          tags: ['#E'],
         },
         function(ex, data) {
           // handle error
