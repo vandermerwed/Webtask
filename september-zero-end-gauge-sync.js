@@ -1,6 +1,7 @@
 const Axios = require('axios');
 const Promise = require('bluebird');
-const moment = require('moment');
+// const moment = require('moment');
+const moment = require('moment-timezone');
 var Firebase = require('firebase-admin');
 
 /**
@@ -69,7 +70,9 @@ module.exports = function(context, cb) {
           let currentEntry = currentTimer.data.data;
 
           let _return = {
-            lastModified: moment().format('DD/MM/YYYY HH:mm:ss'),
+            lastModified: moment()
+              .tz('Africa/Johannesburg')
+              .format('DD/MM/YYYY HH:mm:ss'),
             timeEntries: trackedTime.data.data.map(entry => {
               return {
                 id: entry.id,
@@ -102,7 +105,7 @@ module.exports = function(context, cb) {
     var _settings = snapshot.val();
 
     if (_settings) {
-      let _today = moment.utc().format('YYYY-MM-DD');
+      let _today = moment.tz('Africa/Johannesburg').format('YYYY-MM-DD');
       const energyRef = db.ref('personal/data/' + _today + '/energy');
 
       getStats(_settings, _today, _today).then(
