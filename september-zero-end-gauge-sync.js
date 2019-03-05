@@ -88,7 +88,7 @@ module.exports = function(context, cb) {
             }),
             currentTimer: {
               id: currentEntry.id,
-              description: currentEntry.description,
+              description: currentEntry.description || '',
               start: currentEntry.start,
               duration: currentEntry.duration,
               tags: currentEntry.tags || [],
